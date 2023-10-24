@@ -11,11 +11,7 @@ namespace Project.MAP.Options
     {
         public AppUserMap()
         {
-            ToTable("Kullanicilar");
-            Property(x => x.UserName).HasColumnName("Kullanici Ismi").IsRequired();
-            Property(x => x.Password).HasColumnName("Sifre").IsRequired();
-
-            //İlişki ayarlamaları
+          //İlişki ayarlamaları
             HasOptional(x => x.Profile).WithRequired(x => x.AppUser);
         }
     }

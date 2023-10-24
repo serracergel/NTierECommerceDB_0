@@ -11,8 +11,7 @@ namespace Project.MAP.Options
     {
         public ShipperMap()
         {
-            ToTable("Kargocular");
-            Property(x => x.CompanyName).HasColumnName("Sirket Ismi");
+
         }
     }
 }

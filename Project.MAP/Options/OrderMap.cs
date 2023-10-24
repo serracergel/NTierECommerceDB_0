@@ -11,8 +11,7 @@ namespace Project.MAP.Options
     {
         public OrderMap()
         {
-            ToTable("Siparisler");
-            Property(x => x.ShippingAddress).HasColumnName("Gonderim Adresi").IsRequired();
+
         }
     }
 

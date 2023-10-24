@@ -9,5 +9,9 @@ namespace Project.MAP.Options
 {
     public class SupplierMap:BaseMap<Supplier>
     {
+        public SupplierMap()
+        {
+                
+        }
     }
 }

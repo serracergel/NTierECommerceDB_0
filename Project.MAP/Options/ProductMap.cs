@@ -11,9 +11,8 @@ namespace Project.MAP.Options
     {
         public ProductMap()
         {
-            ToTable("Urunler");
-            Property(x => x.ProductName).HasColumnName("Urun Ismi").IsRequired();
-            Property(x => x.UnitPrice).HasColumnName("Fiyat").HasColumnType("money");
+
+            Property(x => x.UnitPrice).HasColumnType("money");
         }
     }
 }

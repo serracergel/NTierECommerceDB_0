@@ -9,6 +9,14 @@ namespace Project.MAP.Options
 {
     public class ProductAttributeMap:BaseMap<ProductAttribute>
     {
-
+        public ProductAttributeMap()
+        {
+            Ignore(x => x.ID);
+            HasKey(x => new
+            {
+                x.AttributeID,
+                x.ProductID
+            });
+        }
     }
 }

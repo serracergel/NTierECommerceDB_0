@@ -11,9 +11,7 @@ namespace Project.MAP.Options
     {
         public AppUserProfileMap()
         {
-            ToTable("Profiller");
-            Property(x => x.FirstName).HasColumnName("Isim").IsRequired();
-            Property(x => x.LastName).HasColumnName("SoyIsim").IsRequired();
+
         }
     }
 }

@@ -9,6 +9,9 @@ namespace Project.MAP.Options
 {
     public class SpecAttributeMap:BaseMap<SpecAttribute>
     {
-
+        public SpecAttributeMap()
+        {
+                
+        }
     }
 }

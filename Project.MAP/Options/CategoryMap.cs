@@ -11,9 +11,7 @@ namespace Project.MAP.Options
     {
         public CategoryMap()
         {
-            ToTable("Kategoriler");
-            Property(x => x.Title).HasColumnName("Kategori Adi").IsRequired().HasMaxLength(40);
-            Property(x => x.Description).HasColumnName("Aciklama");
+
 
         }
     }

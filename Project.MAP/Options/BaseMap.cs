@@ -12,10 +12,7 @@ namespace Project.MAP.Options
     {
         public BaseMap()
         {
-            Property(x => x.CreatedDate).HasColumnName("Yaratılma Tarihi");
-            Property(x => x.DeletedDate).HasColumnName("Silme Tarihi");
-            Property(x => x.UpdatedDate).HasColumnName("Guncelleme Tarihi");
-            Property(x => x.Status).HasColumnName("Veri Durumu");
+
         }
         
 
