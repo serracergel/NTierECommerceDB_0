@@ -17,5 +17,7 @@ namespace Project.MAP.Options
             Property(x => x.ModifiedDate).HasColumnName("Guncelleme Tarihi");
             Property(x => x.Status).HasColumnName("Veri Durumu");
         }
+        
+
     }
 }
