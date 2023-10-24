@@ -14,7 +14,7 @@ namespace Project.MAP.Options
         {
             Property(x => x.CreatedDate).HasColumnName("Yaratılma Tarihi");
             Property(x => x.DeletedDate).HasColumnName("Silme Tarihi");
-            Property(x => x.ModifiedDate).HasColumnName("Guncelleme Tarihi");
+            Property(x => x.UpdatedDate).HasColumnName("Guncelleme Tarihi");
             Property(x => x.Status).HasColumnName("Veri Durumu");
         }
         
