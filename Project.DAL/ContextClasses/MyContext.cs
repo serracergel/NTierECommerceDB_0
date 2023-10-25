@@ -11,7 +11,14 @@ namespace Project.DAL.ContextClasses
 {
     public class MyContext:DbContext
     {
-
+        #region BU katmana geldigimizde migrations kodlarini yazip test ederken yapilan hatalar
+        /*Katmanlarin references kismini kontrol et
+         * config dosyasi name MyContext classindaki name ile ayni mi
+         * appconfige ekledigimiz config dosyasi kodlarinda kelime harf hatasi vs var mi
+         * server name kendi pc server !!
+         -FSC
+         */
+        #endregion
         public MyContext():base("MyConnection")
         {
                 
@@ -44,6 +51,7 @@ namespace Project.DAL.ContextClasses
         public DbSet<Shipper> Shippers { get; set; }
         public DbSet<SpecAttribute> SpecAttributes { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
     }
 }
