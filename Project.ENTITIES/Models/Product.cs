@@ -17,5 +17,9 @@ namespace Project.ENTITIES.Models
         public virtual Category Category { get; set; }
         public virtual List<ProductAttribute> ProductAttributes { get; set; }
         public virtual Supplier Supplier { get; set; }
+        public override string ToString()
+        {
+            return $"{ProductName} => {UnitPrice:C2}";
+        }
     }
 }

@@ -124,7 +124,6 @@
     <Compile Include="Patterns\GenericRepository\EFConcRep\SpecAttributeRepository.cs" />
     <Compile Include="Patterns\GenericRepository\EFConcRep\SupplierRepository.cs" />
     <Compile Include="Patterns\GenericRepository\IntRep\IRepository.cs" />
-    <Compile Include="Patterns\GenericRepository\MongoBaseRep\BaseRepository.cs" />
     <Compile Include="Patterns\SingletonPattern\DBTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

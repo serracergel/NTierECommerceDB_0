@@ -35,7 +35,7 @@
             this.BtnEkle = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
             this.BtnGuncelle = new System.Windows.Forms.Button();
-            this.LblAciklama = new System.Windows.Forms.Label();
+            this.lblAltKategori = new System.Windows.Forms.Label();
             this.BtnSepeteEkle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmrAdet)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +47,7 @@
             this.cmbKategoriler.Name = "cmbKategoriler";
             this.cmbKategoriler.Size = new System.Drawing.Size(121, 21);
             this.cmbKategoriler.TabIndex = 0;
+            this.cmbKategoriler.SelectedIndexChanged += new System.EventHandler(this.cmbKategoriler_SelectedIndexChanged);
             // 
             // lstUrunler
             // 
@@ -55,6 +56,8 @@
             this.lstUrunler.Name = "lstUrunler";
             this.lstUrunler.Size = new System.Drawing.Size(310, 173);
             this.lstUrunler.TabIndex = 1;
+            this.lstUrunler.Click += new System.EventHandler(this.lstUrunler_Click);
+            this.lstUrunler.SelectedIndexChanged += new System.EventHandler(this.lstUrunler_SelectedIndexChanged);
             // 
             // nmrAdet
             // 
@@ -110,13 +113,13 @@
             this.BtnGuncelle.Text = "Güncelle";
             this.BtnGuncelle.UseVisualStyleBackColor = true;
             // 
-            // LblAciklama
+            // lblAltKategori
             // 
-            this.LblAciklama.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LblAciklama.Location = new System.Drawing.Point(12, 179);
-            this.LblAciklama.Name = "LblAciklama";
-            this.LblAciklama.Size = new System.Drawing.Size(302, 102);
-            this.LblAciklama.TabIndex = 5;
+            this.lblAltKategori.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAltKategori.Location = new System.Drawing.Point(12, 179);
+            this.lblAltKategori.Name = "lblAltKategori";
+            this.lblAltKategori.Size = new System.Drawing.Size(302, 102);
+            this.lblAltKategori.TabIndex = 5;
             // 
             // BtnSepeteEkle
             // 
@@ -126,6 +129,7 @@
             this.BtnSepeteEkle.TabIndex = 4;
             this.BtnSepeteEkle.Text = "Sepete Ekle";
             this.BtnSepeteEkle.UseVisualStyleBackColor = true;
+            this.BtnSepeteEkle.Click += new System.EventHandler(this.BtnSepeteEkle_Click);
             // 
             // Form1
             // 
@@ -133,7 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(726, 397);
-            this.Controls.Add(this.LblAciklama);
+            this.Controls.Add(this.lblAltKategori);
             this.Controls.Add(this.BtnGuncelle);
             this.Controls.Add(this.BtnSil);
             this.Controls.Add(this.BtnSepeteEkle);
@@ -144,6 +148,7 @@
             this.Controls.Add(this.cmbKategoriler);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmrAdet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,7 +164,7 @@
         private System.Windows.Forms.Button BtnEkle;
         private System.Windows.Forms.Button BtnSil;
         private System.Windows.Forms.Button BtnGuncelle;
-        private System.Windows.Forms.Label LblAciklama;
+        private System.Windows.Forms.Label lblAltKategori;
         private System.Windows.Forms.Button BtnSepeteEkle;
     }
 }
