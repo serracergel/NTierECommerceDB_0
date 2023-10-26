@@ -28,108 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbKategoriler = new System.Windows.Forms.ComboBox();
-            this.lstUrunler = new System.Windows.Forms.ListBox();
-            this.nmrAdet = new System.Windows.Forms.NumericUpDown();
-            this.lblKategoriler = new System.Windows.Forms.Label();
-            this.BtnEkle = new System.Windows.Forms.Button();
-            this.BtnSil = new System.Windows.Forms.Button();
-            this.BtnGuncelle = new System.Windows.Forms.Button();
-            this.lblAltKategori = new System.Windows.Forms.Label();
-            this.BtnSepeteEkle = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrAdet)).BeginInit();
+            this.lstProducts = new System.Windows.Forms.ListBox();
+            this.lblCategories = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnnAddToCart = new System.Windows.Forms.Button();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.rdDessert1 = new System.Windows.Forms.RadioButton();
+            this.rdDessert2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // cmbKategoriler
+            // lstProducts
             // 
-            this.cmbKategoriler.FormattingEnabled = true;
-            this.cmbKategoriler.Location = new System.Drawing.Point(15, 69);
-            this.cmbKategoriler.Name = "cmbKategoriler";
-            this.cmbKategoriler.Size = new System.Drawing.Size(121, 21);
-            this.cmbKategoriler.TabIndex = 0;
-            this.cmbKategoriler.SelectedIndexChanged += new System.EventHandler(this.cmbKategoriler_SelectedIndexChanged);
+            this.lstProducts.FormattingEnabled = true;
+            this.lstProducts.Location = new System.Drawing.Point(331, 12);
+            this.lstProducts.Name = "lstProducts";
+            this.lstProducts.Size = new System.Drawing.Size(360, 212);
+            this.lstProducts.TabIndex = 1;
+            this.lstProducts.Click += new System.EventHandler(this.lstUrunler_Click);
+            this.lstProducts.SelectedIndexChanged += new System.EventHandler(this.lstUrunler_SelectedIndexChanged);
             // 
-            // lstUrunler
+            // lblCategories
             // 
-            this.lstUrunler.FormattingEnabled = true;
-            this.lstUrunler.Location = new System.Drawing.Point(377, 58);
-            this.lstUrunler.Name = "lstUrunler";
-            this.lstUrunler.Size = new System.Drawing.Size(310, 173);
-            this.lstUrunler.TabIndex = 1;
-            this.lstUrunler.Click += new System.EventHandler(this.lstUrunler_Click);
-            this.lstUrunler.SelectedIndexChanged += new System.EventHandler(this.lstUrunler_SelectedIndexChanged);
+            this.lblCategories.AutoSize = true;
+            this.lblCategories.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategories.Location = new System.Drawing.Point(36, 111);
+            this.lblCategories.Name = "lblCategories";
+            this.lblCategories.Size = new System.Drawing.Size(61, 17);
+            this.lblCategories.TabIndex = 3;
+            this.lblCategories.Text = "Desserts";
             // 
-            // nmrAdet
+            // btnAdd
             // 
-            this.nmrAdet.Location = new System.Drawing.Point(179, 70);
-            this.nmrAdet.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmrAdet.Name = "nmrAdet";
-            this.nmrAdet.Size = new System.Drawing.Size(50, 20);
-            this.nmrAdet.TabIndex = 2;
-            this.nmrAdet.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.btnAdd.Location = new System.Drawing.Point(377, 237);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(91, 32);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lblKategoriler
+            // btnDelete
             // 
-            this.lblKategoriler.AutoSize = true;
-            this.lblKategoriler.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKategoriler.Location = new System.Drawing.Point(12, 44);
-            this.lblKategoriler.Name = "lblKategoriler";
-            this.lblKategoriler.Size = new System.Drawing.Size(78, 17);
-            this.lblKategoriler.TabIndex = 3;
-            this.lblKategoriler.Text = "Kategoriler";
+            this.btnDelete.Location = new System.Drawing.Point(377, 275);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(91, 32);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // BtnEkle
+            // btnUpdate
             // 
-            this.BtnEkle.Location = new System.Drawing.Point(377, 249);
-            this.BtnEkle.Name = "BtnEkle";
-            this.BtnEkle.Size = new System.Drawing.Size(91, 32);
-            this.BtnEkle.TabIndex = 4;
-            this.BtnEkle.Text = "Ekle";
-            this.BtnEkle.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(377, 313);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(91, 32);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // BtnSil
+            // btnnAddToCart
             // 
-            this.BtnSil.Location = new System.Drawing.Point(482, 249);
-            this.BtnSil.Name = "BtnSil";
-            this.BtnSil.Size = new System.Drawing.Size(91, 32);
-            this.BtnSil.TabIndex = 4;
-            this.BtnSil.Text = "Sil";
-            this.BtnSil.UseVisualStyleBackColor = true;
+            this.btnnAddToCart.Location = new System.Drawing.Point(13, 249);
+            this.btnnAddToCart.Name = "btnnAddToCart";
+            this.btnnAddToCart.Size = new System.Drawing.Size(134, 32);
+            this.btnnAddToCart.TabIndex = 4;
+            this.btnnAddToCart.Text = "Add To Cart";
+            this.btnnAddToCart.UseVisualStyleBackColor = true;
+            this.btnnAddToCart.Click += new System.EventHandler(this.BtnSepeteEkle_Click);
             // 
-            // BtnGuncelle
+            // txtProductName
             // 
-            this.BtnGuncelle.Location = new System.Drawing.Point(588, 249);
-            this.BtnGuncelle.Name = "BtnGuncelle";
-            this.BtnGuncelle.Size = new System.Drawing.Size(91, 32);
-            this.BtnGuncelle.TabIndex = 4;
-            this.BtnGuncelle.Text = "Güncelle";
-            this.BtnGuncelle.UseVisualStyleBackColor = true;
+            this.txtProductName.Location = new System.Drawing.Point(251, 261);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(100, 20);
+            this.txtProductName.TabIndex = 6;
             // 
-            // lblAltKategori
+            // txtUnitPrice
             // 
-            this.lblAltKategori.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAltKategori.Location = new System.Drawing.Point(12, 179);
-            this.lblAltKategori.Name = "lblAltKategori";
-            this.lblAltKategori.Size = new System.Drawing.Size(302, 102);
-            this.lblAltKategori.TabIndex = 5;
+            this.txtUnitPrice.Location = new System.Drawing.Point(251, 313);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtUnitPrice.TabIndex = 6;
             // 
-            // BtnSepeteEkle
+            // rdDessert1
             // 
-            this.BtnSepeteEkle.Location = new System.Drawing.Point(15, 325);
-            this.BtnSepeteEkle.Name = "BtnSepeteEkle";
-            this.BtnSepeteEkle.Size = new System.Drawing.Size(134, 32);
-            this.BtnSepeteEkle.TabIndex = 4;
-            this.BtnSepeteEkle.Text = "Sepete Ekle";
-            this.BtnSepeteEkle.UseVisualStyleBackColor = true;
-            this.BtnSepeteEkle.Click += new System.EventHandler(this.BtnSepeteEkle_Click);
+            this.rdDessert1.AutoSize = true;
+            this.rdDessert1.Location = new System.Drawing.Point(39, 146);
+            this.rdDessert1.Name = "rdDessert1";
+            this.rdDessert1.Size = new System.Drawing.Size(91, 17);
+            this.rdDessert1.TabIndex = 7;
+            this.rdDessert1.TabStop = true;
+            this.rdDessert1.Text = "Milk Puddings";
+            this.rdDessert1.UseVisualStyleBackColor = true;
+            this.rdDessert1.Click += new System.EventHandler(this.rdDessert1_Click);
+            // 
+            // rdDessert2
+            // 
+            this.rdDessert2.AutoSize = true;
+            this.rdDessert2.Location = new System.Drawing.Point(39, 183);
+            this.rdDessert2.Name = "rdDessert2";
+            this.rdDessert2.Size = new System.Drawing.Size(108, 17);
+            this.rdDessert2.TabIndex = 8;
+            this.rdDessert2.TabStop = true;
+            this.rdDessert2.Text = "Siruped Puddings";
+            this.rdDessert2.UseVisualStyleBackColor = true;
+            this.rdDessert2.Click += new System.EventHandler(this.rdDessert2_Click);
             // 
             // Form1
             // 
@@ -137,35 +143,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(726, 397);
-            this.Controls.Add(this.lblAltKategori);
-            this.Controls.Add(this.BtnGuncelle);
-            this.Controls.Add(this.BtnSil);
-            this.Controls.Add(this.BtnSepeteEkle);
-            this.Controls.Add(this.BtnEkle);
-            this.Controls.Add(this.lblKategoriler);
-            this.Controls.Add(this.nmrAdet);
-            this.Controls.Add(this.lstUrunler);
-            this.Controls.Add(this.cmbKategoriler);
+            this.Controls.Add(this.rdDessert2);
+            this.Controls.Add(this.rdDessert1);
+            this.Controls.Add(this.txtUnitPrice);
+            this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnnAddToCart);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.lblCategories);
+            this.Controls.Add(this.lstProducts);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nmrAdet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbKategoriler;
-        private System.Windows.Forms.ListBox lstUrunler;
-        private System.Windows.Forms.NumericUpDown nmrAdet;
-        private System.Windows.Forms.Label lblKategoriler;
-        private System.Windows.Forms.Button BtnEkle;
-        private System.Windows.Forms.Button BtnSil;
-        private System.Windows.Forms.Button BtnGuncelle;
-        private System.Windows.Forms.Label lblAltKategori;
-        private System.Windows.Forms.Button BtnSepeteEkle;
+        private System.Windows.Forms.ListBox lstProducts;
+        private System.Windows.Forms.Label lblCategories;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnnAddToCart;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.TextBox txtUnitPrice;
+        private System.Windows.Forms.RadioButton rdDessert1;
+        private System.Windows.Forms.RadioButton rdDessert2;
     }
 }
 

@@ -19,7 +19,7 @@ namespace Project.DAL.ContextClasses
          -FSC
          */
         #endregion
-        public MyContext():base("MyConnection")
+        public MyContext():base("DilaraConnection")
         {
                 
         }

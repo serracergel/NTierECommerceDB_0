@@ -11,9 +11,16 @@ namespace Project.ENTITIES.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public int? CategoryID { get; set; }
+        public int? ParentCategoryID { get; set; }
         //Relational Properties 
         public virtual List<Product> Products { get; set; }
-        public virtual List<Category> Categories { get; set; }
+        public virtual List<Category> ChildCategories { get; set; }
+        public  virtual Category ParentCategory { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Title}";
+
+        }
     }
 }
