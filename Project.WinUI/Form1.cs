@@ -62,11 +62,7 @@ namespace Project.WinUI
             //cmbParentCategories.DataSource = products;
         }
 
-        private void BtnSepeteEkle_Click(object sender, EventArgs e)
-        {
-            Form2 f2 = new Form2(lstProducts.Items);
-            f2.ShowDialog();
-        }
+
 
         private void lstUrunler_Click(object sender, EventArgs e)
         {
@@ -87,7 +83,7 @@ namespace Project.WinUI
 
         private void rdDessert1_Click(object sender, EventArgs e)
         {
-            List<Product> p = new List<Product>
+            List<Product> p = new List<Product>//kategory ıd 21
             {
                 new Product{ProductName = "Sütlü Nuriye", UnitPrice = 155, },
                 new Product { ProductName = "Soguk Baklava", UnitPrice = 300 }
@@ -98,7 +94,7 @@ namespace Project.WinUI
         List<Product> p2;
         private void rdDessert2_Click(object sender, EventArgs e)
         {
-            List<Product> p2 = new List<Product>
+            List<Product> p2 = new List<Product>//kategori ıd 22 denilecek
             {
                 new Product{ProductName = "Fıstıklı Baklava",UnitPrice = 200},
                 new Product{ProductName = "Cevizli Baklava",UnitPrice = 150},

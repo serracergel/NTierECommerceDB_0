@@ -33,7 +33,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnnAddToCart = new System.Windows.Forms.Button();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.rdDessert1 = new System.Windows.Forms.RadioButton();
@@ -89,16 +88,6 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // btnnAddToCart
-            // 
-            this.btnnAddToCart.Location = new System.Drawing.Point(13, 249);
-            this.btnnAddToCart.Name = "btnnAddToCart";
-            this.btnnAddToCart.Size = new System.Drawing.Size(134, 32);
-            this.btnnAddToCart.TabIndex = 4;
-            this.btnnAddToCart.Text = "Add To Cart";
-            this.btnnAddToCart.UseVisualStyleBackColor = true;
-            this.btnnAddToCart.Click += new System.EventHandler(this.BtnSepeteEkle_Click);
-            // 
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(251, 261);
@@ -149,7 +138,6 @@
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnnAddToCart);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblCategories);
             this.Controls.Add(this.lstProducts);
@@ -167,7 +155,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnnAddToCart;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.RadioButton rdDessert1;
