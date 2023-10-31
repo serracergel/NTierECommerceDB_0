@@ -85,8 +85,7 @@ namespace Project.WinUI
         {
             List<Product> p = new List<Product>//kategory ıd 21
             {
-                new Product{ProductName = "Sütlü Nuriye", UnitPrice = 155, },
-                new Product { ProductName = "Soguk Baklava", UnitPrice = 300 }
+               
             };
             
             lstProducts.DataSource=p;
@@ -96,11 +95,7 @@ namespace Project.WinUI
         {
             List<Product> p2 = new List<Product>//kategori ıd 22 denilecek
             {
-                new Product{ProductName = "Fıstıklı Baklava",UnitPrice = 200},
-                new Product{ProductName = "Cevizli Baklava",UnitPrice = 150},
-                new Product{ProductName = "Midye Baklava",UnitPrice = 170},
-                new Product{ProductName = "Şöbiyet ",UnitPrice = 175},
-                new Product{ProductName = "Kuru Baklava",UnitPrice = 250}
+               
             };
 
             lstProducts.DataSource = p2;
