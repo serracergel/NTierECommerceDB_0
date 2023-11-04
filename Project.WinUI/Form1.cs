@@ -26,42 +26,11 @@ namespace Project.WinUI
            
             
         }
-
-        private void cmbKategoriler_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (cmbParentCategories.SelectedItem != null) lblChildCategories.Text = (cmbParentCategories.SelectedItem as Product).ProductName;
-            //else lblChildCategories.Text = "";
-        }
         Category pc;
         private void Form1_Load(object sender, EventArgs e)
         {
-          
-          
-           
-         
-            //Category cc = new Category
-            //{
-            //    ParentCategoryID = pc.ID,
-            //    Title="Serbetli Tatlilar"
-            //};
-         
-            //_cRep.Add(cc);
-            //Category cc2 = new Category
-            //{
-            //    ParentCategoryID = pc.ID,
-            //    Title="Sutlu Tatlilar"
-            
-            //};
-          
-            //List<Product> products = new List<Product>
-            //{
 
-            //   ,
-            //  
-            //};
-            //cmbParentCategories.DataSource = products;
         }
-
 
 
         private void lstUrunler_Click(object sender, EventArgs e)
@@ -74,11 +43,9 @@ namespace Project.WinUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (cmbChildCategories.SelectedItem!=null)
-            //{
-            //    _cRep.Destroy(cmbChildCategories.SelectedItem as Category);
-            //}
-            
+            //listboxtan seçileni siler
+            lstProducts.Items.Remove(lstProducts.SelectedItem);
+
         }
 
         private void rdDessert1_Click(object sender, EventArgs e)
@@ -103,13 +70,34 @@ namespace Project.WinUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-          //  Product p = new Product
-          //  {
-          //      ProductName=txtProductName.Text,
-          //      UnitPrice=Convert.ToDecimal(txtUnitPrice.Text)
-          //  };
-          //  p2.Add(p);
-          //lstProducts.DataSource=p2 ;
+            //textboxa yazılan ürünleri listboxa ekleme
+            Product p = new Product
+            {
+                ProductName = txtProductName.Text,
+                UnitPrice = Convert.ToDecimal(txtUnitPrice.Text)
+            };
+
+            lstProducts.Items.Add(p);
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            //üste yazıyor yeni veri gibi ekliyor ????
+            if (lstProducts.SelectedIndex > -1)
+            {
+                int index = lstProducts.SelectedIndex;
+                lstProducts.Items.Remove(lstProducts.SelectedItems);
+                lstProducts.Items.Insert(index, txtUnitPrice.Text);
+               
+              
+            }
+            else {
+                MessageBox.Show("Güncellemek için bir seçim yapınız");
+
+            }
+
         }
     }
 }
