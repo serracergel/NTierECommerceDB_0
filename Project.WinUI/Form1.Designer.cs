@@ -47,7 +47,7 @@
             this.lstProducts.Size = new System.Drawing.Size(360, 212);
             this.lstProducts.TabIndex = 1;
             this.lstProducts.Click += new System.EventHandler(this.lstUrunler_Click);
-            this.lstProducts.SelectedIndexChanged += new System.EventHandler(this.lstUrunler_SelectedIndexChanged);
+         
             // 
             // lblCategories
             // 
@@ -114,7 +114,6 @@
             this.rdDessert1.Text = "Milk Puddings";
             this.rdDessert1.UseVisualStyleBackColor = true;
             this.rdDessert1.CheckedChanged += new System.EventHandler(this.rdDessert1_CheckedChanged);
-            this.rdDessert1.Click += new System.EventHandler(this.rdDessert1_Click);
             // 
             // rdDessert2
             // 
@@ -127,7 +126,6 @@
             this.rdDessert2.Text = "Siruped Puddings";
             this.rdDessert2.UseVisualStyleBackColor = true;
             this.rdDessert2.CheckedChanged += new System.EventHandler(this.rdDessert2_CheckedChanged);
-            this.rdDessert2.Click += new System.EventHandler(this.rdDessert2_Click);
             // 
             // Form1
             // 
@@ -146,7 +144,6 @@
             this.Controls.Add(this.lstProducts);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

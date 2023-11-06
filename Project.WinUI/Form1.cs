@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.ENTITIES.Models;
+using Project.BLL.Patterns.SingletonPattern;
 
 namespace Project.WinUI
 {
@@ -20,19 +21,14 @@ namespace Project.WinUI
             InitializeComponent();
             _cRep = new CategoryRepository();
             _pRep = new ProductRepository();
+
+            
         }
         CategoryRepository _cRep;
         ProductRepository _pRep;
-        private void lstUrunler_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-            
-        }
-        Category pc;
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
+        
+       
 
 
         private void lstUrunler_Click(object sender, EventArgs e)
@@ -50,30 +46,6 @@ namespace Project.WinUI
 
         }
 
-        private void rdDessert1_Click(object sender, EventArgs e)
-        {
-            List<Product> p = new List<Product>//kategory ıd 21
-            {
-               
-            };
-            
-            lstProducts.DataSource=p;
-        }
-        List<Product> p2;
-            //rdDessert1.D
-            //List<Product> p2;
-        
-        
-        private void rdDessert2_Click(object sender, EventArgs e)
-        {
-            List<Product> p2 = new List<Product>//kategori ıd 22 denilecek
-            {
-               
-            };
-
-            lstProducts.DataSource = p2;
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //textboxa yazılan ürünleri listboxa ekleme
@@ -84,6 +56,7 @@ namespace Project.WinUI
             };
 
             lstProducts.Items.Add(p);
+            
 
         }
 
@@ -105,21 +78,21 @@ namespace Project.WinUI
             }
 
         }
-        private void ListProducts(int id)
-        {
-            lstProducts.DataSource = _pRep.GetProductsByCategory(id);
-        }
+        //private void ListProducts(int id)
+        //{
+        //    lstProducts.DataSource = _pRep.GetProductsByCategory(id);
+        //}
 
         private void rdDessert2_CheckedChanged(object sender, EventArgs e)
         {
-            ListProducts(22);
+            lstProducts.DataSource = _pRep.GetProductsByCategory(22);
         }
 
        
 
         private void rdDessert1_CheckedChanged(object sender, EventArgs e)
         {
-            ListProducts(21);
+            lstProducts.DataSource = _pRep.GetProductsByCategory(21);
 
         }
     }
