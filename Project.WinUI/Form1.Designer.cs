@@ -106,25 +106,27 @@
             // rdDessert1
             // 
             this.rdDessert1.AutoSize = true;
-            this.rdDessert1.Location = new System.Drawing.Point(39, 146);
+            this.rdDessert1.Location = new System.Drawing.Point(12, 149);
             this.rdDessert1.Name = "rdDessert1";
             this.rdDessert1.Size = new System.Drawing.Size(91, 17);
             this.rdDessert1.TabIndex = 7;
             this.rdDessert1.TabStop = true;
             this.rdDessert1.Text = "Milk Puddings";
             this.rdDessert1.UseVisualStyleBackColor = true;
+            this.rdDessert1.CheckedChanged += new System.EventHandler(this.rdDessert1_CheckedChanged);
             this.rdDessert1.Click += new System.EventHandler(this.rdDessert1_Click);
             // 
             // rdDessert2
             // 
             this.rdDessert2.AutoSize = true;
-            this.rdDessert2.Location = new System.Drawing.Point(39, 183);
+            this.rdDessert2.Location = new System.Drawing.Point(12, 190);
             this.rdDessert2.Name = "rdDessert2";
             this.rdDessert2.Size = new System.Drawing.Size(108, 17);
             this.rdDessert2.TabIndex = 8;
             this.rdDessert2.TabStop = true;
             this.rdDessert2.Text = "Siruped Puddings";
             this.rdDessert2.UseVisualStyleBackColor = true;
+            this.rdDessert2.CheckedChanged += new System.EventHandler(this.rdDessert2_CheckedChanged);
             this.rdDessert2.Click += new System.EventHandler(this.rdDessert2_Click);
             // 
             // Form1

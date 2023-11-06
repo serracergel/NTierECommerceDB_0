@@ -10,5 +10,10 @@ namespace Project.BLL.Patterns.GenericRepository.EFConcRep
 {
     public class ProductRepository : BaseRepository<Product>
     {
+
+        public List<Product> GetProductsByCategory(int id)
+        {
+            return _db.Products.Where(x => x.CategoryID == id).ToList();
+        }
     }
 }

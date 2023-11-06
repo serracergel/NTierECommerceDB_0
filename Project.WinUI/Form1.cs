@@ -19,8 +19,10 @@ namespace Project.WinUI
         {
             InitializeComponent();
             _cRep = new CategoryRepository();
+            _pRep = new ProductRepository();
         }
         CategoryRepository _cRep;
+        ProductRepository _pRep;
         private void lstUrunler_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -58,6 +60,10 @@ namespace Project.WinUI
             lstProducts.DataSource=p;
         }
         List<Product> p2;
+            //rdDessert1.D
+            //List<Product> p2;
+        }
+        
         private void rdDessert2_Click(object sender, EventArgs e)
         {
             List<Product> p2 = new List<Product>//kategori ıd 22 denilecek
@@ -97,6 +103,23 @@ namespace Project.WinUI
                 MessageBox.Show("Güncellemek için bir seçim yapınız");
 
             }
+
+        }
+        private void ListProducts(int id)
+        {
+            lstProducts.DataSource = _pRep.GetProductsByCategory(id);
+        }
+
+        private void rdDessert2_CheckedChanged(object sender, EventArgs e)
+        {
+            ListProducts(22);
+        }
+
+       
+
+        private void rdDessert1_CheckedChanged(object sender, EventArgs e)
+        {
+            ListProducts(21);
 
         }
     }

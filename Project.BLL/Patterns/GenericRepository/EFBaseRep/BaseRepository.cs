@@ -18,7 +18,7 @@ namespace Project.BLL.Patterns.GenericRepository.EFBaseRep
         {
             _db = DBTool.DBInstance;
         }
-        MyContext _db;
+        protected MyContext _db;
         public void Add(T item)
         {
             _db.Set<T>().Add(item);
