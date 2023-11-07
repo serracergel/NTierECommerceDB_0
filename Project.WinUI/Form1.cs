@@ -33,51 +33,90 @@ namespace Project.WinUI
 
         private void lstUrunler_Click(object sender, EventArgs e)
         {
-            if (lstProducts.SelectedIndex > -1)
-            {
-                //lblChildCategories.Text = (lstProducts.SelectedItem as Product).ProductName;
-            }
+            //tikladigim urunun ismi ve fiyati textboxlarda gozuksun
+            //if (lstProducts.SelectedIndex > -1)
+            //{
+            //    txtProductName.Text = secilen.ProductName;
+            //    txtUnitPrice.Text = secilen.UnitPrice.ToString();
+            //}
         }
 
+        Product secilen;
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //listboxtan seçileni siler
-            lstProducts.Items.Remove(lstProducts.SelectedItem);
-
+            secilen = lstProducts.SelectedItem as Product;
+            //algilamiyo ve once secim yapiniz hataasi aliyoruz
+            if (lstProducts.SelectedIndex<-1)
+            {
+                
+                _pRep.Destroy(secilen);
+                lstProducts.Items.Remove(secilen);
+              
+            }
+            else
+            {
+                MessageBox.Show("Lutfen once secim yapiniz");
+            }
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //textboxa yazılan ürünleri listboxa ekleme
-            Product p = new Product
+            try
             {
-                ProductName = txtProductName.Text,
-                UnitPrice = Convert.ToDecimal(txtUnitPrice.Text)
-            };
+                if (rdDessert1.Checked == true || rdDessert2.Checked == true)
+                {
+                    Product p = new Product
+                    {
+                        ProductName = txtProductName.Text,
+                        UnitPrice = Convert.ToDecimal(txtUnitPrice.Text)//Format exception
+                        //categoryid'si olmasi gerkimiyo mu
+                        //cateogryid'si radibutonda secilen kategorinin id'si nasil dice
+                        //secilen radiobutton diyemiyoruz
+                         //CategoryID = (rdDessert1 as Category).ID;
+                    };
+                    _pRep.Add(p);
+                    lstProducts.DataSource = _pRep.GetActives();
+                }
+                else
+                {
+                    MessageBox.Show("Lutfen once kategori seciniz");
+                }
+            }
+            catch (Exception ex)
+            {
 
-            lstProducts.Items.Add(p);
+                MessageBox.Show(ex.Message);
+            }
+           
+           
             
 
         }
-
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            //üste yazıyor yeni veri gibi ekliyor ????
-            if (lstProducts.SelectedIndex > -1)
+            if//update metodunda nullreference aliyorum    
             {
-                int index = lstProducts.SelectedIndex;
-                lstProducts.Items.Remove(lstProducts.SelectedItems);
-                lstProducts.Items.Insert(index, txtUnitPrice.Text);
-               
-              
+                Product p = new Product();
+                p.ProductName = txtProductName.Text;
+                p.UnitPrice = Convert.ToDecimal(txtUnitPrice.Text);
+
+                _pRep.Update(p);
+                lstProducts.DataSource = _pRep.GetActives();
             }
-            else {
+            else 
+            {
                 MessageBox.Show("Güncellemek için bir seçim yapınız");
 
             }
 
         }
+
+      
+
         //private void ListProducts(int id)
         //{
         //    lstProducts.DataSource = _pRep.GetProductsByCategory(id);
@@ -86,6 +125,7 @@ namespace Project.WinUI
         private void rdDessert2_CheckedChanged(object sender, EventArgs e)
         {
             lstProducts.DataSource = _pRep.GetProductsByCategory(22);
+           
         }
 
        
