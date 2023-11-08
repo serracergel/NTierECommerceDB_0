@@ -34,22 +34,24 @@ namespace Project.WinUI
         private void lstUrunler_Click(object sender, EventArgs e)
         {
             //tikladigim urunun ismi ve fiyati textboxlarda gozuksun
-            //if (lstProducts.SelectedIndex > -1)
-            //{
-            //    txtProductName.Text = secilen.ProductName;
-            //    txtUnitPrice.Text = secilen.UnitPrice.ToString();
-            //}
+            if (lstProducts.SelectedIndex > -1)
+            {
+                secilen = lstProducts.SelectedItem as Product;
+                txtProductName.Text = secilen.ProductName;
+                txtUnitPrice.Text = secilen.UnitPrice.ToString();
+            }
         }
 
         Product secilen;
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            secilen = lstProducts.SelectedItem as Product;
+            
             //algilamiyo ve once secim yapiniz hataasi aliyoruz
             if (lstProducts.SelectedIndex<-1)
             {
                 
                 _pRep.Destroy(secilen);
+                secilen = null;
                 lstProducts.Items.Remove(secilen);
               
             }
@@ -65,17 +67,20 @@ namespace Project.WinUI
             //textboxa yazılan ürünleri listboxa ekleme
             try
             {
-                if (rdDessert1.Checked == true || rdDessert2.Checked == true)
+                if (cmbCategories.SelectedItem != null)
                 {
                     Product p = new Product
                     {
                         ProductName = txtProductName.Text,
-                        UnitPrice = Convert.ToDecimal(txtUnitPrice.Text)//Format exception
+                        UnitPrice = Convert.ToDecimal(txtUnitPrice.Text),//Format exception
+                        CategoryID = (cmbCategories.SelectedItem as Category).ID
                         //categoryid'si olmasi gerkimiyo mu
                         //cateogryid'si radibutonda secilen kategorinin id'si nasil dice
                         //secilen radiobutton diyemiyoruz
-                         //CategoryID = (rdDessert1 as Category).ID;
+                        //CategoryID = (rdDessert1 as Category).ID;
                     };
+
+
                     _pRep.Add(p);
                     lstProducts.DataSource = _pRep.GetActives();
                 }
@@ -98,13 +103,14 @@ namespace Project.WinUI
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            if//update metodunda nullreference aliyorum    
+            if(secilen != null)   
             {
                 Product p = new Product();
                 p.ProductName = txtProductName.Text;
                 p.UnitPrice = Convert.ToDecimal(txtUnitPrice.Text);
 
                 _pRep.Update(p);
+                secilen = null;
                 lstProducts.DataSource = _pRep.GetActives();
             }
             else 
@@ -115,25 +121,31 @@ namespace Project.WinUI
 
         }
 
-      
+
 
         //private void ListProducts(int id)
         //{
         //    lstProducts.DataSource = _pRep.GetProductsByCategory(id);
         //}
 
-        private void rdDessert2_CheckedChanged(object sender, EventArgs e)
+
+
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            lstProducts.DataSource = _pRep.GetProductsByCategory(22);
-           
+            cmbCategories.DataSource = _cRep.GetActives();
+            cmbCategories.ValueMember = "ID";
+
         }
 
-       
-
-        private void rdDessert1_CheckedChanged(object sender, EventArgs e)
+        int id;
+        private void cmbCategories_Click(object sender, EventArgs e)
         {
-            lstProducts.DataSource = _pRep.GetProductsByCategory(21);
-
+            if (cmbCategories.SelectedIndex >-1) 
+            {
+                id=Convert.ToInt32( cmbCategories.SelectedValue);
+               lstProducts.DataSource= _pRep.Where(x=>x.CategoryID==id).ToList();
+            }
         }
     }
 }
